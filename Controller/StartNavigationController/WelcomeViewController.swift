@@ -61,7 +61,7 @@ class WelcomeViewController: UIViewController {
     }
 
     func playTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.guidingImageAnimation), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.45, target: self, selector: #selector(self.guidingImageAnimation), userInfo: nil, repeats: true)
         
     }
     
@@ -104,14 +104,14 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func guidingImageAnimation(){
-        self.guidingImageLeadingConstraint.constant = 10
-        UIView.animate(withDuration: 0.5) {
+        self.guidingImageLeadingConstraint.constant = 5
+        UIView.animate(withDuration: 0.6) {
             self.view.layoutIfNeeded()
 
         } completion: { _ in
-            self.guidingImageLeadingConstraint.constant = 0
+            self.guidingImageLeadingConstraint.constant = -5
 
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.8) {
                 self.view.layoutIfNeeded()
             }
         }

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="backgroudColor"/>
-                        <color key="tintColor" name="tintColor"/>
+                        <color key="tintColor" name="ButtonBG"/>
                         <color key="barTintColor" name="backgroudColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="tintColor"/>
@@ -54,6 +54,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QzR-gj-XpR">
+                                <rect key="frame" x="277" y="435" width="30" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="bcj-cC-HOv"/>
+                                    <constraint firstAttribute="height" constant="30" id="j3Q-yJ-RoC"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sv-oZ-gvh" customClass="Start" customModule="TheSports" customModuleProvider="target">
                                 <rect key="frame" x="137" y="413" width="140" height="70"/>
                                 <color key="backgroundColor" name="ButtonBG"/>
@@ -68,13 +75,6 @@
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                 </buttonConfiguration>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QzR-gj-XpR">
-                                <rect key="frame" x="277" y="435.5" width="30" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="bcj-cC-HOv"/>
-                                    <constraint firstAttribute="height" constant="30" id="j3Q-yJ-RoC"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="backgroudColor"/>
@@ -178,13 +178,11 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="8L5-Wd-jwQ">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left.circle" catalog="system" id="Q6R-dG-qwt">
-                            <color key="tintColor" name="ButtonBG"/>
                             <connections>
                                 <action selector="backBarButtonPressed:" destination="6X8-Te-r8H" id="70G-oa-48l"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" image="arrow.right.circle" catalog="system" id="vF5-g5-olr">
-                            <color key="tintColor" name="ButtonBG"/>
                             <connections>
                                 <action selector="nextBarButtonPressed:" destination="6X8-Te-r8H" id="V4c-ec-2vM"/>
                             </connections>
@@ -192,17 +190,96 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nextBarButton" destination="vF5-g5-olr" id="UKj-c9-0Gz"/>
+                        <segue destination="MEj-Sa-F3r" kind="push" id="tnN-lW-lLw"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLF-Ph-dlE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298.55072463768118" y="53.571428571428569"/>
+            <point key="canvasLocation" x="352" y="63"/>
+        </scene>
+        <!--Countries Table View Controller-->
+        <scene sceneID="RAG-Ty-dpI">
+            <objects>
+                <tableViewController storyboardIdentifier="CountriesTableViewController" id="MEj-Sa-F3r" customClass="CountriesTableViewController" customModule="TheSports" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="rMU-i7-Dfd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="backgroudColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="DA2-YQ-JlP">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" name="backgroudColor"/>
+                            <color key="barTintColor" name="backgroudColor"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountriesTableViewCell" id="jew-hE-x1d" customClass="CountriesTableViewCell" customModule="TheSports" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jew-hE-x1d" id="por-t4-Wz9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwK-Sr-WLt">
+                                            <rect key="frame" x="40" y="11.5" width="309" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6m5-gw-sbm">
+                                            <rect key="frame" x="369" y="9.5" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="cTe-wt-xlt"/>
+                                                <constraint firstAttribute="height" constant="25" id="xWM-4v-lEk"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XwK-Sr-WLt" firstAttribute="leading" secondItem="por-t4-Wz9" secondAttribute="leadingMargin" constant="20" id="4gt-eE-4XV"/>
+                                        <constraint firstAttribute="trailing" secondItem="6m5-gw-sbm" secondAttribute="trailing" constant="20" id="ahg-0d-D0f"/>
+                                        <constraint firstItem="6m5-gw-sbm" firstAttribute="centerY" secondItem="por-t4-Wz9" secondAttribute="centerY" id="k2T-06-ilW"/>
+                                        <constraint firstItem="6m5-gw-sbm" firstAttribute="leading" secondItem="XwK-Sr-WLt" secondAttribute="trailing" constant="20" id="o1q-dK-n62"/>
+                                        <constraint firstItem="XwK-Sr-WLt" firstAttribute="centerY" secondItem="por-t4-Wz9" secondAttribute="centerY" id="zSF-yY-ZNp"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="backgroudColor"/>
+                                <connections>
+                                    <outlet property="name" destination="XwK-Sr-WLt" id="bID-Sc-3S3"/>
+                                    <outlet property="selectedCellImage" destination="6m5-gw-sbm" id="XEN-KU-c9E"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MEj-Sa-F3r" id="qOm-1h-9f6"/>
+                            <outlet property="delegate" destination="MEj-Sa-F3r" id="gCc-Td-Nhi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ZVF-HG-D7V">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left.circle" catalog="system" id="I6m-en-awb">
+                            <connections>
+                                <action selector="backBarButtonTapped:" destination="MEj-Sa-F3r" id="N6d-a8-xih"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" image="arrow.right.circle" catalog="system" id="Rfk-eE-NHC">
+                            <connections>
+                                <action selector="nextBarButtonTapped:" destination="MEj-Sa-F3r" id="5lr-sS-FPW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nextBarButton" destination="Rfk-eE-NHC" id="Tsf-n1-y3h"/>
+                        <outlet property="searchBar" destination="DA2-YQ-JlP" id="wJm-78-EAK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydO-9z-4Zc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="65"/>
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="arrow.left.circle" catalog="system" width="128" height="121"/>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
+        <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <namedColor name="ButtonBG">
             <color red="0.035294117647058823" green="0.53725490196078429" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -11,6 +11,8 @@
 		735799E128A923CB005AC31D /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735799E028A923CB005AC31D /* Files.swift */; };
 		737AA58628A790F0001E961E /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737AA58528A790F0001E961E /* Start.swift */; };
 		7381A1EF28A93D2000F10161 /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381A1EE28A93D2000F10161 /* SportsCollectionViewCell.swift */; };
+		7381A1F128A9673800F10161 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381A1F028A9673800F10161 /* CountriesTableViewController.swift */; };
+		7381A1F428A96FBF00F10161 /* CountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381A1F328A96FBF00F10161 /* CountriesTableViewCell.swift */; };
 		73EA1F0728A645EA0063495D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA1F0628A645EA0063495D /* AppDelegate.swift */; };
 		73EA1F0928A645EA0063495D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA1F0828A645EA0063495D /* SceneDelegate.swift */; };
 		73EA1F0B28A645EA0063495D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA1F0A28A645EA0063495D /* WelcomeViewController.swift */; };
@@ -31,6 +33,8 @@
 		735799E028A923CB005AC31D /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		737AA58528A790F0001E961E /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		7381A1EE28A93D2000F10161 /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7381A1F028A9673800F10161 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
+		7381A1F328A96FBF00F10161 /* CountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewCell.swift; sourceTree = "<group>"; };
 		73EA1F0328A645EA0063495D /* TheSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73EA1F0628A645EA0063495D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73EA1F0828A645EA0063495D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 			children = (
 				737AA58328A790C7001E961E /* WelcomScreen */,
 				7381A1ED28A93CBD00F10161 /* SportsCollectionVC */,
+				7381A1F228A96F9000F10161 /* CountriesTableVC */,
 			);
 			path = StartNavigationView;
 			sourceTree = "<group>";
@@ -91,6 +96,14 @@
 				7381A1EE28A93D2000F10161 /* SportsCollectionViewCell.swift */,
 			);
 			path = SportsCollectionVC;
+			sourceTree = "<group>";
+		};
+		7381A1F228A96F9000F10161 /* CountriesTableVC */ = {
+			isa = PBXGroup;
+			children = (
+				7381A1F328A96FBF00F10161 /* CountriesTableViewCell.swift */,
+			);
+			path = CountriesTableVC;
 			sourceTree = "<group>";
 		};
 		73EA1EFA28A645EA0063495D = {
@@ -184,6 +197,7 @@
 			children = (
 				73EA1F0A28A645EA0063495D /* WelcomeViewController.swift */,
 				735799DE28A9213E005AC31D /* SportsCollectionViewController.swift */,
+				7381A1F028A9673800F10161 /* CountriesTableViewController.swift */,
 			);
 			path = StartNavigationController;
 			sourceTree = "<group>";
@@ -265,6 +279,7 @@
 				73EA1F0B28A645EA0063495D /* WelcomeViewController.swift in Sources */,
 				73EA1F2E28A677E80063495D /* Extentions.swift in Sources */,
 				73EA1F1D28A648D80063495D /* Request.swift in Sources */,
+				7381A1F428A96FBF00F10161 /* CountriesTableViewCell.swift in Sources */,
 				73EA1F2028A6490E0063495D /* Enums.swift in Sources */,
 				73EA1F0728A645EA0063495D /* AppDelegate.swift in Sources */,
 				73EA1F0928A645EA0063495D /* SceneDelegate.swift in Sources */,
@@ -272,6 +287,7 @@
 				735799E128A923CB005AC31D /* Files.swift in Sources */,
 				7381A1EF28A93D2000F10161 /* SportsCollectionViewCell.swift in Sources */,
 				73EA1F2928A64D010063495D /* Countries.swift in Sources */,
+				7381A1F128A9673800F10161 /* CountriesTableViewController.swift in Sources */,
 				73EA1F2328A64A7E0063495D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

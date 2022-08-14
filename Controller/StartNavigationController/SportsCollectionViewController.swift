@@ -40,6 +40,9 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     @IBAction func nextBarButtonPressed(_ sender: UIBarButtonItem) {
+        let countriesVC = storyboard?.instantiateViewController(withIdentifier: "CountriesTableViewController") as! CountriesTableViewController
+        countriesVC.sport = selectedSport
+        navigationController?.pushViewController(countriesVC, animated: true)
     }
     
     // MARK: Helper Fuctions
@@ -58,7 +61,7 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
 
                 
             }catch{
-                self.navigationItem.largeTitleDisplayMode = .never
+//                self.navigationItem.largeTitleDisplayMode = .never
                 self.navigationItem.title = "You apper to be offline"
             }
             
