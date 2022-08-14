@@ -10,14 +10,20 @@ import UIKit
 private let reuseIdentifier = "SportsCollectionViewCell"
 
 class SportsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    // MARK: - IBOutlets
 
+    @IBOutlet weak var nextBarButton: UIBarButtonItem!
+    
+    
     // MARK: - Properties
     var sports: [Sport] = []
+    var selectedSport: Sport!
     let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
 
     // MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextBarButton.isEnabled = false
         navigationItem.title = "Sports You may prefer"
         
         indicator.center = view.center  // make indicator at the view's center
@@ -27,7 +33,17 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
         sportsNetworkRequest()      // start network request
     }
     
+    // MARK: - IBActions
+
+    @IBAction func backBarButtonPressed(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func nextBarButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
     // MARK: Helper Fuctions
+    
     // a function that featches sports
     func sportsNetworkRequest(){
         Task{
@@ -50,6 +66,7 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
             files.saveToFiles(self.sports)
         }
     }
+    
     // a function that featches sports iconImage
     func featchSportsIconImage(){
         // featch sports iconImage
@@ -86,14 +103,23 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SportsCollectionViewCell
-        let sport = sports[indexPath.row]
-        // Configure the cell
         
-        if let image = sport.iconImage{
+        let sport = sports[indexPath.row]   // sport at indexPath
+        
+        // Configure the cell
+        if let image = sport.iconImage{     // change cell image to sport's icon image
             cell.image.image = image
         }
         
-        cell.name.text = sport.name
+        cell.name.text = sport.name // change cell label to sport's name
+        
+        if let selectedSport = selectedSport{
+            if sport.name == selectedSport.name{ // if sport at indexPath equal selectedSport
+                cell.isCellSelected = true      // show selectedCellImage
+            }else{
+                cell.isCellSelected = false     // hide selectedCellImage
+            }
+        }
         
     
         return cell
@@ -109,6 +135,12 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedSport = sports[indexPath.row]
+        nextBarButton.isEnabled = true
+        collectionView.reloadData()
+        
+    }
     
 }
