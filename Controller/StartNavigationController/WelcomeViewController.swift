@@ -32,10 +32,17 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+//        UIDevice.current.setValue(value, forKey: "orientation")
+        
         updateView()
         playTimer()
 
     }
+    // if returns false the screen will not rotate
+    override open var shouldAutorotate: Bool {
+            return false
+        }
     
     // MARK: - Helper Funtions
 
@@ -123,5 +130,6 @@ class WelcomeViewController: UIViewController {
     
     
 }
+
 
 

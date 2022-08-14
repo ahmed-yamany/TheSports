@@ -53,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		735799DD28A916AF005AC31D /* Extensions+Enums */ = {
+			isa = PBXGroup;
+			children = (
+				73EA1F1F28A6490E0063495D /* Enums.swift */,
+				73EA1F2D28A677E80063495D /* Extentions.swift */,
+			);
+			path = "Extensions+Enums";
+			sourceTree = "<group>";
+		};
 		737AA58228A790A7001E961E /* StartNavigationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,9 +81,9 @@
 		73EA1EFA28A645EA0063495D = {
 			isa = PBXGroup;
 			children = (
+				735799DD28A916AF005AC31D /* Extensions+Enums */,
 				73EA1F2128A64A710063495D /* Helper */,
 				73EA1F2F28A69E170063495D /* Request */,
-				73EA1F1E28A648F60063495D /* Extensions+Enums */,
 				73EA1F2428A64CBA0063495D /* Model */,
 				73EA1F2528A64CC50063495D /* View */,
 				73EA1F1A28A647F90063495D /* Controller */,
@@ -106,16 +115,6 @@
 			children = (
 				73EA1F3128A6B4740063495D /* StartNavigationController */,
 			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		73EA1F1E28A648F60063495D /* Extensions+Enums */ = {
-			isa = PBXGroup;
-			children = (
-				73EA1F1F28A6490E0063495D /* Enums.swift */,
-				73EA1F2D28A677E80063495D /* Extentions.swift */,
-			);
-			name = "Extensions+Enums";
 			path = Controller;
 			sourceTree = "<group>";
 		};
