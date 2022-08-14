@@ -43,14 +43,14 @@ class Request{
 
     }
     
-    static func featchImage(from url: URL) async throws -> Data{
+    static func featchImage(from url: URL) async throws -> UIImage{
         let (date, response) = try await URLSession.shared.data(from: url)
         
-        guard let HttpResponse = response as? HTTPURLResponse, HttpResponse.statusCode == 200 else{
+        guard let HttpResponse = response as? HTTPURLResponse, HttpResponse.statusCode == 200, let image = UIImage(data: date) else{
             throw CustomErrors.ImageDataMissing
         }
         
-        return date
+        return image
     }
 
 }

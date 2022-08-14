@@ -19,17 +19,19 @@ struct Sport: Codable{
     var id: String
     var name: String
     var formate: String
-    var imageUrl: URL!
-    var iconUrl: URL!
+    var banner: URL!
+    var icon: URL!
     var description: String
         
+    var bannerImage: UIImage!
+    var iconImage: UIImage!
     
     enum CodingKeys: String, CodingKey{
         case id = "idSport"
         case name = "strSport"
         case formate = "strFormat"
-        case imageUrl = "strSportThumb"
-        case iconUrl = "strSportIconGreen"
+        case banner = "strSportThumb"
+        case icon = "strSportIconGreen"
         case description = "strSportDescription"
         
         

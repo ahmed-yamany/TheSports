@@ -18,22 +18,14 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var guidingImage: UIImageView!
     @IBOutlet weak var guidingImageLeadingConstraint: NSLayoutConstraint!
     
-    
+    // MARK: - Properties
     let startBrnYposition = SCREENHEIGHT / 4
     let startBrnXposition =  -(SCREENWIDTH/4)
     var timer: Timer!
     
     // MARK: - Views
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-//        UIDevice.current.setValue(value, forKey: "orientation")
         
         updateView()
         playTimer()
@@ -96,7 +88,7 @@ class WelcomeViewController: UIViewController {
                 viewsDeafultPosition()
                 
                 // present next ViewController
-                let vc = storyboard?.instantiateViewController(withIdentifier: "view")
+                let vc = storyboard?.instantiateViewController(withIdentifier: "SportsCollectionViewController")
                 navigationController?.pushViewController(vc!, animated: true)
             }
             

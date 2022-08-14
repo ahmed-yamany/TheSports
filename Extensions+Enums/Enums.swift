@@ -43,6 +43,28 @@ enum CustomNetworkRequests: Any{
         }
     }
     
+    func filePath() -> String{
+        switch self {
+        case .sports:
+            return "Sports"
+        case .countries:
+            return "Countries"
+        case .leagues:
+            return "PreferedLeagues"
+        }
+    }
+    
+    func filesDataTypes<T>() -> T.Type where T: Codable{
+        switch self {
+        case .sports:
+            return Array<Sport>.self as! T.Type
+        case .countries:
+            return Array<Country>.self as! T.Type
+        case .leagues:
+            return Array<League>.self as! T.Type
+        }
+
+    }
     
     
     
