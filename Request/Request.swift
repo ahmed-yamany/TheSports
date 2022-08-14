@@ -12,7 +12,7 @@ class Request{
     var request: CustomNetworkRequests
     var queryItems: [URLQueryItem]!
     
-    init(_ request: CustomNetworkRequests, _ queryItems: [URLQueryItem]! = nil){
+    init(_ request: CustomNetworkRequests, queryItems: [URLQueryItem]! = nil){
         self.request = request
         self.queryItems = queryItems
     }
@@ -43,14 +43,14 @@ class Request{
 
     }
     
-    static func featchImage(from url: URL) async throws -> UIImage{
+    static func featchImage(from url: URL) async throws -> Data{
         let (date, response) = try await URLSession.shared.data(from: url)
         
-        guard let HttpResponse = response as? HTTPURLResponse, HttpResponse.statusCode == 200, let image = UIImage(data: date) else{
+        guard let HttpResponse = response as? HTTPURLResponse, HttpResponse.statusCode == 200 else{
             throw CustomErrors.ImageDataMissing
         }
         
-        return image
+        return date
     }
 
 }
