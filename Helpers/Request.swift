@@ -34,7 +34,7 @@ class Request{
          guard let HttpResponse = response as? HTTPURLResponse, HttpResponse.statusCode == 200 else{
             throw CustomErrors.itemNotFound // if request not complete throw an error
         }
-        
+
          let modelType: T.Type = request.type()
 
          let decodedData = try JSONDecoder().decode(modelType, from: data)

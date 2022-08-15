@@ -19,22 +19,16 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate{
     var sport: Sport!
     var selectedCountry: Country!
     
+    // MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
         nextBarButton.isEnabled = false
         searchBar.delegate = self
         self.tableView.keyboardDismissMode = .onDrag
         countriesNetworkRequest()
-        
-        
        
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print(66)
-//        searchBar.endEditing(true)
-
-    }
+        
     
     // MARK: - IBActions
     
@@ -43,10 +37,14 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate{
     }
     
     @IBAction func nextBarButtonTapped(_ sender: UIBarButtonItem) {
-        
-    
+        if let sport = sport, let selectedCountry = selectedCountry{
+            let LeaguesVC = storyboard?.instantiateViewController(withIdentifier: "LeaguesTableViewController") as! LeaguesTableViewController
+            LeaguesVC.sport = sport
+            LeaguesVC.country = selectedCountry
+            
+            navigationController?.pushViewController(LeaguesVC, animated: true)
+        }
     }
-    
     
     
     // MARK: - Helper Functions
@@ -84,9 +82,10 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountriesTableViewCell", for: indexPath) as! CountriesTableViewCell
-        cell.selectionStyle = .none
+                
         let countrie = filteredCountries[indexPath.row]
         // Configure the cell...
+        cell.selectionStyle = .none
         cell.name.text = countrie.name
         
         if let selectedCountry = selectedCountry{
@@ -114,13 +113,13 @@ class CountriesTableViewController: UITableViewController, UISearchBarDelegate{
         if searchText.isEmpty{
             filteredCountries = countries
         }else{
-        filteredCountries = []
-        
-        for country in countries {
-            if country.name.lowercased().contains(searchText.lowercased()){
-                filteredCountries.append(country)
+            filteredCountries = []
+            
+            for country in countries {
+                if country.name.lowercased().contains(searchText.lowercased()){
+                    filteredCountries.append(country)
+                }
             }
-        }
         }
         
         tableView.reloadData()

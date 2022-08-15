@@ -52,9 +52,9 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
         Task{
             do{
                 let request = Request(.sports)
-                let requestData: Sports = try await request.featchData()    // featch sports
+                let SportsRequest: Sports = try await request.featchData()    // featch sports
                 
-                self.sports = requestData.sports    // add featched sports to sports array
+                self.sports = SportsRequest.sports    // add featched sports to sports array
                 
                 featchSportsIconImage()             // featch sports icons
                 self.indicator.stopAnimating()      // stop indicator

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Leagues: Codable{
-    var leagues: [League]
+    var leagues: [League]!
     
     enum CodingKeys: String, CodingKey{
         case leagues = "countries"
@@ -28,15 +28,15 @@ struct League: Codable{
     var currentSeason: String!
     var formedYear: String!
     var firstEventDate: String!
-    
-    var website: String
-    var facebook: String
-    var instagram: String
-    var twitter: String
-    var youtube: String
-    
+//
+    var website: String!
+    var facebook: String!
+    var instagram: String!
+    var twitter: String!
+    var youtube: String!
+//
     var description: String!
-    
+
     var banner: URL!
     var badge: URL!
     var logo: URL!
@@ -48,6 +48,16 @@ struct League: Codable{
     var strFanart3: URL!
     var strFanart4: URL!
     
+    var images: LeagueImages = LeagueImages()
+    
+    var fanartes: [URL?]?{
+        let t = [strFanart1, strFanart2, strFanart3, strFanart4].filter {$0 != nil}
+        
+        if t.count > 0{
+            return t
+        }
+        return nil // if nil will hide the collection view
+    }
     
     enum CodingKeys: String, CodingKey{
         case id = "idLeague"
@@ -64,6 +74,7 @@ struct League: Codable{
         case instagram = "strInstagram"
         case twitter = "strTwitter"
         case youtube = "strYoutube"
+        
         case description = "strDescriptionEN"
         case banner = "strBanner"
         case badge = "strBadge"
@@ -72,9 +83,20 @@ struct League: Codable{
         case trophy = "strTrophy"
         case strFanart1, strFanart2, strFanart3, strFanart4
 
-        
+
         
     }
 }
 
 
+struct LeagueImages{
+    
+    var banner: UIImage!
+    var badge: UIImage!
+    var logo: UIImage!
+    var poster: UIImage!
+    var trophy: UIImage!
+
+    var fanares: [UIImage]!
+    
+}

@@ -24,6 +24,18 @@ class WelcomeViewController: UIViewController {
     var timer: Timer!
     
     // MARK: - Views
+    override func viewWillAppear(_ animated: Bool) {
+        let files = Files(request: .leagues)
+        let preferedLeagues: [League]! = files.loadModels()
+        
+        if let _ = preferedLeagues{
+            let tabBarVC = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! UITabBarController
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC, animated: true)
+            
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
