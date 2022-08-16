@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-public let MainNetworkURL = "https://www.thesportsdb.com/api/v1/json/2/"
+public let BaseURL = "https://www.thesportsdb.com/api/v1/json/2/"
 
 public let SCREENWIDTH = UIScreen.main.bounds.width
 public let SCREENHEIGHT = UIScreen.main.bounds.height

@@ -10,7 +10,15 @@ import UIKit
 class LeaguesDetailsTableViewController: UITableViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var bannerImageView: UIImageView!
-    @IBOutlet weak var badgeImageView: UIImageView!
+    @IBOutlet weak var badgeImageView: UIImageView!{
+        didSet{
+            badgeImageView.layer.cornerRadius = 30
+            badgeImageView.layer.shadowOpacity = 5
+            badgeImageView.layer.shadowOffset = CGSize(width: 3, height: 3)
+            badgeImageView.layer.shadowColor = UIColor.black.cgColor
+            badgeImageView.layer.shadowRadius = badgeImageView.frame.height / 3
+        }
+    }
     
     // MARK: - Properties
     var league: League!
@@ -24,6 +32,8 @@ class LeaguesDetailsTableViewController: UITableViewController {
         
         navigationItem.title = league.name
         featchBannerImage()
+        badgeImageView.image = league.images.badge
+
 
     }
     // MARK: - IBActions
@@ -36,23 +46,14 @@ class LeaguesDetailsTableViewController: UITableViewController {
         Task{
             do{
                 if let banner = league.banner{
-                    print(banner)
                     let featchedImage = try await Request.featchImage(from: banner)
                     league.images.banner = featchedImage
-                    updateBannerImageView()
                 }
-            }catch{
-                print("error")
-                print(error.localizedDescription)
             }
-            
+            bannerImageView.image = league.images.banner
         }
     }
     
-    func updateBannerImageView(){
-        bannerImageView.image = league.images.banner
-        badgeImageView.image = league.images.badge
-    }
     
     // MARK: - Table view Delegate
 

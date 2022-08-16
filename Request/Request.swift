@@ -18,7 +18,7 @@ class Request{
     }
     
     var url: String {
-        return MainNetworkURL + request.endpoint()
+        return BaseURL + request.endpoint()
     }
   
     var urlComponent: URLComponents{
