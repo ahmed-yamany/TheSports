@@ -95,11 +95,12 @@ struct League: Codable, Equatable{
 
 struct LeagueImages{
     
-    var banner: UIImage!
-    var badge: UIImage!
-    var logo: UIImage!
-    var poster: UIImage!
-    var trophy: UIImage!
+    var banner: UIImage! = UIImage(systemName: "exclamationmark.octagon")
+    
+    var badge: UIImage! = UIImage(systemName: "exclamationmark.octagon")
+    var logo: UIImage! = UIImage(systemName: "exclamationmark.octagon")
+    var poster: UIImage! = UIImage(systemName: "exclamationmark.octagon")
+    var trophy: UIImage! = UIImage(systemName: "exclamationmark.octagon")
 
     var fanares: [UIImage]!
     

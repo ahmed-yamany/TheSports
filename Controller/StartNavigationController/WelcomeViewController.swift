@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
         let files = Files(request: .leagues)
         let preferedLeagues: [League]! = files.loadModels()
         
-        if let _ = preferedLeagues{
+        if let preferedLeagues = preferedLeagues, preferedLeagues.count > 0 {
             let tabBarVC = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! UITabBarController
             tabBarVC.modalPresentationStyle = .fullScreen
             present(tabBarVC, animated: true)

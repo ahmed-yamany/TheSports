@@ -111,7 +111,7 @@ class LeaguesTableViewController: UITableViewController {
                     }
                     
                 }catch{
-                    self.leagues[leagueIndex].images.badge = UIImage(systemName: "exclamationmark.octagon")
+                 
                 }
             }
         }

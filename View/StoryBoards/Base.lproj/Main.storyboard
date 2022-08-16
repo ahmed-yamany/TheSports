@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NNY-dP-B96">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sEC-9l-nWa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-464" y="63"/>
+            <point key="canvasLocation" x="-403" y="63"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="aVj-07-eQY">
@@ -202,6 +202,74 @@
             </objects>
             <point key="canvasLocation" x="3695.652173913044" y="482.8125"/>
         </scene>
+        <!--Leagues Details Table View Controller-->
+        <scene sceneID="OjH-Cj-sLG">
+            <objects>
+                <tableViewController storyboardIdentifier="LeaguesDetailsTableViewController" id="Ijd-xm-gFk" customClass="LeaguesDetailsTableViewController" customModule="TheSports" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="lQc-XE-ImJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="backgroudColor"/>
+                        <color key="tintColor" name="tintColor"/>
+                        <color key="separatorColor" name="ButtonBG"/>
+                        <color key="sectionIndexColor" name="ButtonBG"/>
+                        <color key="sectionIndexBackgroundColor" name="backgroudColor"/>
+                        <sections>
+                            <tableViewSection id="Ycp-zW-YzH">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="140" id="9io-56-8y8">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9io-56-8y8" id="dnU-FF-m0m">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="league1" translatesAutoresizingMaskIntoConstraints="NO" id="iZl-ap-y0x">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="league1" translatesAutoresizingMaskIntoConstraints="NO" id="8JP-TV-Ee7">
+                                                    <rect key="frame" x="20" y="67" width="62" height="62"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iZl-ap-y0x" firstAttribute="width" secondItem="dnU-FF-m0m" secondAttribute="width" id="CVQ-Zw-urA"/>
+                                                <constraint firstItem="8JP-TV-Ee7" firstAttribute="width" secondItem="dnU-FF-m0m" secondAttribute="height" multiplier="0.444" id="Eyl-Uh-7CQ"/>
+                                                <constraint firstItem="8JP-TV-Ee7" firstAttribute="leading" secondItem="dnU-FF-m0m" secondAttribute="leading" constant="20" id="J5y-O9-ypQ"/>
+                                                <constraint firstItem="8JP-TV-Ee7" firstAttribute="height" secondItem="dnU-FF-m0m" secondAttribute="height" multiplier="0.4444" id="Jie-yS-iFY"/>
+                                                <constraint firstItem="iZl-ap-y0x" firstAttribute="top" secondItem="dnU-FF-m0m" secondAttribute="top" id="TEU-Vc-0L0"/>
+                                                <constraint firstItem="iZl-ap-y0x" firstAttribute="centerY" secondItem="dnU-FF-m0m" secondAttribute="centerY" id="aIQ-p5-6iW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8JP-TV-Ee7" secondAttribute="bottom" id="i5W-tU-eIN"/>
+                                                <constraint firstItem="iZl-ap-y0x" firstAttribute="height" secondItem="dnU-FF-m0m" secondAttribute="height" multiplier="0.75" id="ixR-8J-Xjx"/>
+                                                <constraint firstItem="iZl-ap-y0x" firstAttribute="centerX" secondItem="dnU-FF-m0m" secondAttribute="centerX" id="lkk-qx-2sy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroudColor"/>
+                                        <color key="tintColor" name="tintColor"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Ijd-xm-gFk" id="sct-FX-71G"/>
+                            <outlet property="delegate" destination="Ijd-xm-gFk" id="6xO-aE-1ke"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4zx-Yz-vxC">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left.circle" catalog="system" id="pk1-bI-Jdf">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="Ijd-xm-gFk" id="2UM-Wl-EdW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="badgeImageView" destination="8JP-TV-Ee7" id="O1p-cB-BcA"/>
+                        <outlet property="bannerImageView" destination="iZl-ap-y0x" id="d3e-bf-C7z"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hub-Wn-uwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4544.927536231884" y="482.8125"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="j7V-2v-8uk">
             <objects>
@@ -253,7 +321,7 @@
             <objects>
                 <navigationController id="enl-Oq-Vhe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RdC-Dm-nRy"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JU0-7w-Rno">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.left.circle" catalog="system" id="JU0-7w-Rno">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="backgroudColor"/>
@@ -522,6 +590,7 @@
         <image name="arrow.left.circle" catalog="system" width="128" height="121"/>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
+        <image name="league1" width="170.5" height="170.5"/>
         <namedColor name="ButtonBG">
             <color red="0.035000000149011612" green="0.53700000047683716" blue="0.30199998617172241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

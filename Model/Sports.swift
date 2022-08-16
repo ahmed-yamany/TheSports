@@ -23,8 +23,8 @@ struct Sport: Codable{
     var icon: URL!
     var description: String
         
-    var bannerImage: UIImage!
-    var iconImage: UIImage!
+    var bannerImage: UIImage! = UIImage(systemName: "exclamationmark.octagon")
+    var iconImage: UIImage! = UIImage(systemName: "exclamationmark.octagon")
     
     enum CodingKeys: String, CodingKey{
         case id = "idSport"

@@ -40,7 +40,6 @@ class PreferedLeaguesTableViewController: UITableViewController {
     }
     
     
-    
     // MARK: - Helper Functions
     func featchLeaguesBadge(){
         for leagueIndex in 0..<preferedLeagues.count{
@@ -79,8 +78,6 @@ class PreferedLeaguesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PreferedLeaguesTableViewCell", for: indexPath) as! PreferedLeaguesTableViewCell
 
         // Configure the cell...
-        cell.selectionStyle = .none
-        
         cell.configure(league: preferedLeagues[indexPath.row])
         return cell
     }
@@ -101,6 +98,16 @@ class PreferedLeaguesTableViewController: UITableViewController {
 
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let leagueDetailsVC = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsTableViewController") as! LeaguesDetailsTableViewController
+        
+        leagueDetailsVC.league = preferedLeagues[indexPath.row]
+        
+        navigationController?.pushViewController(leagueDetailsVC, animated: true)
     }
 
     

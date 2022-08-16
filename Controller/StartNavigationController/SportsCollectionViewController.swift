@@ -82,9 +82,6 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
 
                     collectionView.reloadItems(at: [IndexPath(row: sportIndex, section: 0)])    // reload cell at indexPath
                 }catch{
-
-                    self.sports[sportIndex].iconImage = UIImage(systemName: "exclamationmark.octagon")
-                    
                     
                 }
             }
