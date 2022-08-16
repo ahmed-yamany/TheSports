@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sEC-9l-nWa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NNY-dP-B96">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -112,10 +112,11 @@
         <scene sceneID="aVj-07-eQY">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarViewController" id="NNY-dP-B96" customClass="TabBarViewController" customModule="TheSports" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dLJ-40-ITM">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dLJ-40-ITM" customClass="TabBar" customModule="TheSports" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="backgroudColor"/>
+                        <color key="barTintColor" name="backgroudColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="enl-Oq-Vhe" kind="relationship" relationship="viewControllers" id="M01-J4-fhu"/>
@@ -126,25 +127,61 @@
             </objects>
             <point key="canvasLocation" x="1977" y="822"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Prefered Leagues-->
         <scene sceneID="L84-4O-YAN">
             <objects>
-                <tableViewController id="qvu-wz-4wW" sceneMemberID="viewController">
+                <tableViewController id="qvu-wz-4wW" customClass="PreferedLeaguesTableViewController" customModule="TheSports" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XCL-sp-4ws">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="backgroudColor"/>
                         <color key="tintColor" name="tintColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="55c-lN-6y5">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreferedLeaguesTableViewCell" rowHeight="118" id="55c-lN-6y5" customClass="PreferedLeaguesTableViewCell" customModule="TheSports" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="118"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="55c-lN-6y5" id="YWh-VG-VCR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="09Y-91-Ua7">
+                                            <rect key="frame" x="20" y="29" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="1mb-bK-9th"/>
+                                                <constraint firstAttribute="height" constant="60" id="qcd-lV-qBE"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKa-tU-mxG">
+                                            <rect key="frame" x="100" y="49" width="274" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <color key="highlightedColor" name="tintColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbZ-ZT-0Gz">
+                                            <rect key="frame" x="100" y="69.5" width="274" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <color key="highlightedColor" name="tintColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kbZ-ZT-0Gz" firstAttribute="top" secondItem="MKa-tU-mxG" secondAttribute="bottom" id="3ig-q6-3dw"/>
+                                        <constraint firstItem="09Y-91-Ua7" firstAttribute="centerY" secondItem="YWh-VG-VCR" secondAttribute="centerY" id="P48-fV-r2a"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kbZ-ZT-0Gz" secondAttribute="trailing" constant="20" id="PIe-vA-2Qs"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="MKa-tU-mxG" secondAttribute="trailing" constant="20" id="Ver-lM-wGn"/>
+                                        <constraint firstItem="09Y-91-Ua7" firstAttribute="leading" secondItem="YWh-VG-VCR" secondAttribute="leading" constant="20" id="bbW-vA-zcP"/>
+                                        <constraint firstItem="MKa-tU-mxG" firstAttribute="leading" secondItem="09Y-91-Ua7" secondAttribute="trailing" constant="20" id="t2Y-q1-ZQ7"/>
+                                        <constraint firstItem="MKa-tU-mxG" firstAttribute="centerY" secondItem="YWh-VG-VCR" secondAttribute="centerY" id="ttt-qm-Xvp"/>
+                                        <constraint firstItem="kbZ-ZT-0Gz" firstAttribute="leading" secondItem="09Y-91-Ua7" secondAttribute="trailing" constant="20" id="xWN-Ag-glZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="backgroudColor"/>
                                 <color key="tintColor" name="tintColor"/>
+                                <connections>
+                                    <outlet property="leagueAlternate" destination="kbZ-ZT-0Gz" id="k9G-D1-6KW"/>
+                                    <outlet property="leagueBadge" destination="09Y-91-Ua7" id="3QB-QG-Z2S"/>
+                                    <outlet property="leagueName" destination="MKa-tU-mxG" id="hBc-Xc-uch"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -152,11 +189,18 @@
                             <outlet property="delegate" destination="qvu-wz-4wW" id="FA5-nx-7fg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rec-UF-XZD"/>
+                    <navigationItem key="navigationItem" title="Prefered Leagues" id="rec-UF-XZD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KBG-LH-s5A">
+                            <connections>
+                                <action selector="addLeagueTapped:" destination="qvu-wz-4wW" id="t1e-HL-SeH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waf-cf-phD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3696" y="483"/>
+            <point key="canvasLocation" x="3695.652173913044" y="482.8125"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="j7V-2v-8uk">
@@ -214,7 +258,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="backgroudColor"/>
                         <color key="tintColor" name="ButtonBG"/>
-                        <color key="barTintColor" name="ButtonBG"/>
+                        <color key="barTintColor" name="backgroudColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="qvu-wz-4wW" kind="relationship" relationship="rootViewController" id="aWY-vP-q32"/>

@@ -17,7 +17,7 @@ struct Leagues: Codable{
     }
 }
 
-struct League: Codable{
+struct League: Codable, Equatable{
     var id : String
     
     var sport: String
@@ -58,6 +58,10 @@ struct League: Codable{
         }
         return nil // if nil will hide the collection view
     }
+    
+    static func == (lhs: League, rhs: League) -> Bool {
+          return lhs.id == rhs.id
+      }
     
     enum CodingKeys: String, CodingKey{
         case id = "idLeague"

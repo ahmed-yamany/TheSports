@@ -23,8 +23,7 @@ class LeaguesTableViewController: UITableViewController {
     // MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         nextbarButton.isEnabled = false
         
         indicator.center = view.center  // make indicator at the view's center
@@ -45,20 +44,24 @@ class LeaguesTableViewController: UITableViewController {
         guard let selectedLeague = selectedLeague else{return}
         
         let files = Files(request: .leagues)
+        
         let preferedLeagues: [League]! = files.loadModels()
         
-        if var preferedLeagues = preferedLeagues{
-            preferedLeagues.append(selectedLeague)
-            files.saveToFiles(preferedLeagues)
+        if let preferedLeagues = preferedLeagues{
+            if !preferedLeagues.contains(selectedLeague){
+            
+                let newLeagues = preferedLeagues + [selectedLeague]
+                files.saveToFiles(newLeagues)
+            }
         }else{
             files.saveToFiles([selectedLeague])
         }
-        
+
         let tabBarVC = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! UITabBarController
         tabBarVC.modalPresentationStyle = .fullScreen
         present(tabBarVC, animated: true)
-        
-        
+
+
         
         
     }
@@ -90,8 +93,8 @@ class LeaguesTableViewController: UITableViewController {
                 self.navigationItem.title = "You apper to be offline"
             }
             
-            let files = Files(request: .leagues)
-            files.saveToFiles(self.leagues)
+//            let files = Files(request: .leagues)
+//            files.saveToFiles(self.leagues)
         }
     }
     
@@ -154,5 +157,8 @@ class LeaguesTableViewController: UITableViewController {
         nextbarButton.isEnabled = true
         tableView.reloadData()
     }
+    
+    
+    
     
 }

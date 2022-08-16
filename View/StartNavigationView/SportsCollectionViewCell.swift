@@ -24,4 +24,14 @@ class SportsCollectionViewCell: UICollectionViewCell {
             }
         }
     }
+    
+    
+    func configure(sport: Sport){
+        if let image = sport.iconImage{     // change cell image to sport's icon image
+            self.image.image = image
+        }
+        
+        self.name.text = sport.name // change cell label to sport's name
+        
+    }
 }

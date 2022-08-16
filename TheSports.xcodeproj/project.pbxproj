@@ -10,6 +10,8 @@
 		735799DF28A9213E005AC31D /* SportsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735799DE28A9213E005AC31D /* SportsCollectionViewController.swift */; };
 		735799E128A923CB005AC31D /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735799E028A923CB005AC31D /* Files.swift */; };
 		737AA58628A790F0001E961E /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737AA58528A790F0001E961E /* Start.swift */; };
+		737C77F328ABE52700159AA4 /* PreferedLeaguesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C77F228ABE52700159AA4 /* PreferedLeaguesTableViewController.swift */; };
+		737C77F828ABE6A300159AA4 /* PreferedLeaguesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C77F728ABE6A300159AA4 /* PreferedLeaguesTableViewCell.swift */; };
 		7381A1EF28A93D2000F10161 /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381A1EE28A93D2000F10161 /* SportsCollectionViewCell.swift */; };
 		7381A1F128A9673800F10161 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381A1F028A9673800F10161 /* CountriesTableViewController.swift */; };
 		7381A1F428A96FBF00F10161 /* CountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381A1F328A96FBF00F10161 /* CountriesTableViewCell.swift */; };
@@ -35,6 +37,8 @@
 		735799DE28A9213E005AC31D /* SportsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCollectionViewController.swift; sourceTree = "<group>"; };
 		735799E028A923CB005AC31D /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		737AA58528A790F0001E961E /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+		737C77F228ABE52700159AA4 /* PreferedLeaguesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferedLeaguesTableViewController.swift; sourceTree = "<group>"; };
+		737C77F728ABE6A300159AA4 /* PreferedLeaguesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferedLeaguesTableViewCell.swift; sourceTree = "<group>"; };
 		7381A1EE28A93D2000F10161 /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7381A1F028A9673800F10161 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 		7381A1F328A96FBF00F10161 /* CountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,50 +85,35 @@
 		737AA58228A790A7001E961E /* StartNavigationView */ = {
 			isa = PBXGroup;
 			children = (
-				737AA58328A790C7001E961E /* WelcomScreen */,
-				7381A1ED28A93CBD00F10161 /* SportsCollectionVC */,
-				7381A1F228A96F9000F10161 /* CountriesTableVC */,
-				73CEDB4A28AA965C003BDB6A /* LeaguesTVC */,
+				737AA58528A790F0001E961E /* Start.swift */,
+				7381A1EE28A93D2000F10161 /* SportsCollectionViewCell.swift */,
+				7381A1F328A96FBF00F10161 /* CountriesTableViewCell.swift */,
+				73CEDB4B28AA968B003BDB6A /* LeaguesTableViewCell.swift */,
 			);
 			path = StartNavigationView;
 			sourceTree = "<group>";
 		};
-		737AA58328A790C7001E961E /* WelcomScreen */ = {
+		737C77F428ABE60100159AA4 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				737AA58528A790F0001E961E /* Start.swift */,
+				737C77F528ABE65100159AA4 /* PreferedLeagues */,
 			);
-			path = WelcomScreen;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
-		7381A1ED28A93CBD00F10161 /* SportsCollectionVC */ = {
+		737C77F528ABE65100159AA4 /* PreferedLeagues */ = {
 			isa = PBXGroup;
 			children = (
-				7381A1EE28A93D2000F10161 /* SportsCollectionViewCell.swift */,
+				737C77F728ABE6A300159AA4 /* PreferedLeaguesTableViewCell.swift */,
 			);
-			path = SportsCollectionVC;
-			sourceTree = "<group>";
-		};
-		7381A1F228A96F9000F10161 /* CountriesTableVC */ = {
-			isa = PBXGroup;
-			children = (
-				7381A1F328A96FBF00F10161 /* CountriesTableViewCell.swift */,
-			);
-			path = CountriesTableVC;
-			sourceTree = "<group>";
-		};
-		73CEDB4A28AA965C003BDB6A /* LeaguesTVC */ = {
-			isa = PBXGroup;
-			children = (
-				73CEDB4B28AA968B003BDB6A /* LeaguesTableViewCell.swift */,
-			);
-			path = LeaguesTVC;
+			path = PreferedLeagues;
 			sourceTree = "<group>";
 		};
 		73CEDB4D28AA9E4D003BDB6A /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
 				73CEDB4E28AAA0B8003BDB6A /* TabBarViewController.swift */,
+				737C77F228ABE52700159AA4 /* PreferedLeaguesTableViewController.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -193,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				737AA58228A790A7001E961E /* StartNavigationView */,
+				737C77F428ABE60100159AA4 /* TabBar */,
 				73EA1F2A28A65A840063495D /* StoryBoards */,
 			);
 			path = View;
@@ -310,11 +300,13 @@
 				73EA1F0928A645EA0063495D /* SceneDelegate.swift in Sources */,
 				73EA1F2C28A675280063495D /* Leagues.swift in Sources */,
 				735799E128A923CB005AC31D /* Files.swift in Sources */,
+				737C77F828ABE6A300159AA4 /* PreferedLeaguesTableViewCell.swift in Sources */,
 				7381A1EF28A93D2000F10161 /* SportsCollectionViewCell.swift in Sources */,
 				73CEDB4F28AAA0B8003BDB6A /* TabBarViewController.swift in Sources */,
 				73CEDB4928AA7954003BDB6A /* LeaguesTableViewController.swift in Sources */,
 				73EA1F2928A64D010063495D /* Countries.swift in Sources */,
 				7381A1F128A9673800F10161 /* CountriesTableViewController.swift in Sources */,
+				737C77F328ABE52700159AA4 /* PreferedLeaguesTableViewController.swift in Sources */,
 				73CEDB4C28AA968B003BDB6A /* LeaguesTableViewCell.swift in Sources */,
 				73EA1F2328A64A7E0063495D /* Constants.swift in Sources */,
 			);

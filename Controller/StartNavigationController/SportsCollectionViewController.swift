@@ -110,11 +110,7 @@ class SportsCollectionViewController: UICollectionViewController, UICollectionVi
         let sport = sports[indexPath.row]   // sport at indexPath
         
         // Configure the cell
-        if let image = sport.iconImage{     // change cell image to sport's icon image
-            cell.image.image = image
-        }
-        
-        cell.name.text = sport.name // change cell label to sport's name
+        cell.configure(sport: sport)
         
         if let selectedSport = selectedSport{
             if sport.name == selectedSport.name{ // if sport at indexPath equal selectedSport

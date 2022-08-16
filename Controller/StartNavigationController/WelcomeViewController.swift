@@ -102,6 +102,7 @@ class WelcomeViewController: UIViewController {
                 // present next ViewController
                 let vc = storyboard?.instantiateViewController(withIdentifier: "SportsCollectionViewController")
                 navigationController?.pushViewController(vc!, animated: true)
+            
             }
             
         }else if gestur.state == .ended{ // if moves ended
