@@ -28,13 +28,13 @@ struct League: Codable, Equatable{
     var currentSeason: String!
     var formedYear: String!
     var firstEventDate: String!
-//
+
     var website: String!
     var facebook: String!
     var instagram: String!
     var twitter: String!
     var youtube: String!
-//
+
     var description: String!
 
     var banner: URL!
@@ -90,6 +90,47 @@ struct League: Codable, Equatable{
 
         
     }
+    
+    var socialMediaLinks: [[String: String]]{
+        var links: [[String: String]] = []
+        
+        if let website = website, !website.isEmpty{
+            links.append([
+                "link": website,
+                "image": "web"
+            ])
+        }
+        
+        if let facebook = facebook, !facebook.isEmpty{
+            links.append([
+                "link": facebook,
+                "image": "facebook"
+            ])
+        }
+        if let instagram = instagram, !instagram.isEmpty{
+            links.append([
+                "link": instagram,
+                "image": "instagram"
+            ])
+        }
+        
+        if let twitter = twitter, !twitter.isEmpty{
+            links.append([
+                "link": twitter,
+                "image": "twitter"
+            ])
+        }
+        if let youtube = youtube, !youtube.isEmpty{
+            links.append( [
+                "link": youtube,
+                "image": "youtube"
+            ])
+        }
+        
+        return links
+        
+    }
+
 }
 
 

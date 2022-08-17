@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730770F528AD30AB00F133C5 /* SocialMedialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730770F428AD30AB00F133C5 /* SocialMedialCollectionViewCell.swift */; };
 		735799DF28A9213E005AC31D /* SportsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735799DE28A9213E005AC31D /* SportsCollectionViewController.swift */; };
 		735799E128A923CB005AC31D /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735799E028A923CB005AC31D /* Files.swift */; };
 		737AA58628A790F0001E961E /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737AA58528A790F0001E961E /* Start.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		730770F428AD30AB00F133C5 /* SocialMedialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMedialCollectionViewCell.swift; sourceTree = "<group>"; };
 		735799DE28A9213E005AC31D /* SportsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCollectionViewController.swift; sourceTree = "<group>"; };
 		735799E028A923CB005AC31D /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		737AA58528A790F0001E961E /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		730770F328AD307D00F133C5 /* LeagueDetails */ = {
+			isa = PBXGroup;
+			children = (
+				730770F428AD30AB00F133C5 /* SocialMedialCollectionViewCell.swift */,
+			);
+			path = LeagueDetails;
+			sourceTree = "<group>";
+		};
 		735799DD28A916AF005AC31D /* Extensions+Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				737C77F728ABE6A300159AA4 /* PreferedLeaguesTableViewCell.swift */,
+				730770F328AD307D00F133C5 /* LeagueDetails */,
 			);
 			path = PreferedLeagues;
 			sourceTree = "<group>";
@@ -315,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				730770F528AD30AB00F133C5 /* SocialMedialCollectionViewCell.swift in Sources */,
 				73EA1F2728A64CDF0063495D /* Sports.swift in Sources */,
 				737C77FE28AC083C00159AA4 /* LeaguesDetailsTableViewController.swift in Sources */,
 				735799DF28A9213E005AC31D /* SportsCollectionViewController.swift in Sources */,
